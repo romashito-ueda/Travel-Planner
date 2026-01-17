@@ -2,7 +2,7 @@
   "tripTitle": "フランス・スイス旅行 2026",
   "dateRange": {
     "start": "2026-01-27",
-    "end": "2026-02-04"
+    "end": "2026-02-05"
   },
   "constraints": [
     {
@@ -19,8 +19,8 @@
       "type": "flight",
       "status": "confirmed",
       "title": "Flight CZ3086",
-      "start": "2026-01-27T10:00:00",
-      "end": "2026-01-27T14:00:00",
+      "start": "2026-01-27T10:45:00",
+      "end": "2026-01-27T15:30:00",
       "location": "Tokyo (HND) -> Guangzhou (CAN)",
       "details": "Seat: TBD"
     },
@@ -29,10 +29,10 @@
       "type": "flight",
       "status": "confirmed",
       "title": "Flight CZ347",
-      "start": "2026-01-27T18:00:00",
-      "end": "2026-01-28T06:00:00",
-      "location": "Guangzhou (CAN) -> Paris (CDG)",
-      "details": "Overnight flight"
+      "start": "2026-01-28T00:50:00",
+      "end": "2026-01-28T06:40:00",
+      "location": "Guangzhou (CAN) -> Paris (CDG Terminal 1)",
+      "details": ""
     },
     {
       "id": "t1",
@@ -109,18 +109,18 @@
       "type": "flight",
       "status": "confirmed",
       "title": "Flight CZ348",
-      "start": "2026-02-04T12:00:00",
-      "end": "2026-02-05T06:00:00",
-      "location": "Paris (CDG) -> Guangzhou (CAN)",
-      "details": ""
+      "start": "2026-02-04T11:05:00",
+      "end": "2026-02-05T06:05:00",
+      "location": "Paris (CDG Terminal 1) -> Guangzhou (CAN)",
+      "details": "Arrives next day (02/05)"
     },
     {
       "id": "f4",
       "type": "flight",
       "status": "confirmed",
       "title": "Flight CZ385",
-      "start": "2026-02-05T09:00:00",
-      "end": "2026-02-05T13:00:00",
+      "start": "2026-02-05T08:50:00",
+      "end": "2026-02-05T13:35:00",
       "location": "Guangzhou (CAN) -> Tokyo (HND)",
       "details": ""
     },
