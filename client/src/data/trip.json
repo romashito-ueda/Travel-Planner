@@ -1,0 +1,182 @@
+{
+  "tripTitle": "フランス・スイス旅行 2026",
+  "dateRange": {
+    "start": "2026-01-27",
+    "end": "2026-02-04"
+  },
+  "constraints": [
+    {
+      "id": "c1",
+      "date": "2026-01-29",
+      "time": "19:30",
+      "description": "コルマール到着厳守 (チェックイン)",
+      "type": "critical"
+    }
+  ],
+  "events": [
+    {
+      "id": "f1",
+      "type": "flight",
+      "status": "confirmed",
+      "title": "Flight CZ3086",
+      "start": "2026-01-27T10:00:00",
+      "end": "2026-01-27T14:00:00",
+      "location": "Tokyo (HND) -> Guangzhou (CAN)",
+      "details": "Seat: TBD"
+    },
+    {
+      "id": "f2",
+      "type": "flight",
+      "status": "confirmed",
+      "title": "Flight CZ347",
+      "start": "2026-01-27T18:00:00",
+      "end": "2026-01-28T06:00:00",
+      "location": "Guangzhou (CAN) -> Paris (CDG)",
+      "details": "Overnight flight"
+    },
+    {
+      "id": "t1",
+      "type": "train",
+      "status": "confirmed",
+      "title": "TGV INOUI 9870",
+      "start": "2026-01-28T08:00:00",
+      "end": "2026-01-28T12:00:00",
+      "location": "Paris -> Lucerne",
+      "details": "Car 4, Seat 22"
+    },
+    {
+      "id": "h1",
+      "type": "hotel",
+      "status": "confirmed",
+      "title": "Hotel des Balances",
+      "start": "2026-01-28T15:00:00",
+      "end": "2026-01-29T10:00:00",
+      "location": "Lucerne",
+      "details": "River view room"
+    },
+    {
+      "id": "t2",
+      "type": "train",
+      "status": "confirmed",
+      "title": "TER 96219",
+      "start": "2026-01-29T14:00:00",
+      "end": "2026-01-29T16:00:00",
+      "location": "Lucerne -> Colmar",
+      "details": "Regional train"
+    },
+    {
+      "id": "h2",
+      "type": "hotel",
+      "status": "confirmed",
+      "title": "Hotel Restaurant Le Maréchal",
+      "start": "2026-01-29T16:30:00",
+      "end": "2026-01-31T10:00:00",
+      "location": "Colmar",
+      "details": "Historic center"
+    },
+    {
+      "id": "t3",
+      "type": "train",
+      "status": "confirmed",
+      "title": "TGV INOUI 2442",
+      "start": "2026-01-31T10:00:00",
+      "end": "2026-01-31T13:00:00",
+      "location": "Colmar -> Paris",
+      "details": ""
+    },
+    {
+      "id": "h3",
+      "type": "hotel",
+      "status": "confirmed",
+      "title": "Aparthotel Adagio access Paris Quai d'Ivry",
+      "start": "2026-01-31T14:00:00",
+      "end": "2026-02-04T10:00:00",
+      "location": "Paris (Ivry)",
+      "details": "Kitchenette included"
+    },
+    {
+      "id": "a1",
+      "type": "activity",
+      "status": "confirmed",
+      "title": "Mont Saint-Michel Tour",
+      "start": "2026-02-01T07:00:00",
+      "end": "2026-02-01T20:00:00",
+      "location": "Mont Saint-Michel",
+      "details": "Full day bus tour"
+    },
+    {
+      "id": "f3",
+      "type": "flight",
+      "status": "confirmed",
+      "title": "Flight CZ348",
+      "start": "2026-02-04T12:00:00",
+      "end": "2026-02-05T06:00:00",
+      "location": "Paris (CDG) -> Guangzhou (CAN)",
+      "details": ""
+    },
+    {
+      "id": "f4",
+      "type": "flight",
+      "status": "confirmed",
+      "title": "Flight CZ385",
+      "start": "2026-02-05T09:00:00",
+      "end": "2026-02-05T13:00:00",
+      "location": "Guangzhou (CAN) -> Tokyo (HND)",
+      "details": ""
+    },
+    {
+      "id": "td1",
+      "type": "activity",
+      "status": "todo",
+      "title": "Dinner in Colmar",
+      "start": "2026-01-29T19:30:00",
+      "end": "2026-01-29T21:00:00",
+      "location": "Colmar",
+      "details": "Find a place near Little Venice"
+    },
+    {
+      "id": "td2",
+      "type": "activity",
+      "status": "planned",
+      "title": "Louvre Museum",
+      "start": "2026-02-02T10:00:00",
+      "end": "2026-02-02T14:00:00",
+      "location": "Paris",
+      "details": "Buy tickets in advance"
+    }
+  ],
+  "places": [
+    {
+      "name": "Hotel des Balances",
+      "address": "Weinmarkt, 6004 Luzern, Switzerland"
+    },
+    {
+      "name": "Hotel Le Maréchal",
+      "address": "4-6 Place des Six Montagnes Noires, 68000 Colmar, France"
+    },
+    {
+      "name": "Aparthotel Adagio access Paris Quai d'Ivry",
+      "address": "50 Boulevard de Brandebourg, 94200 Ivry-sur-Seine, France"
+    },
+    {
+      "name": "Mont Saint-Michel",
+      "address": "50170 Mont Saint-Michel, France"
+    },
+    {
+      "name": "Little Venice",
+      "address": "Quai de la Poissonnerie, 68000 Colmar, France"
+    }
+  ],
+  "checklist": [
+    { "id": "p1", "item": "Passports", "category": "Essentials", "assignee": "me", "checked": true },
+    { "id": "p2", "item": "Train Tickets (Print)", "category": "Essentials", "assignee": "me", "checked": false },
+    { "id": "p3", "item": "Power Adapter (Type C/J)", "category": "Gadgets", "assignee": "partner", "checked": false },
+    { "id": "p4", "item": "Sim Cards / E-Sim", "category": "Essentials", "assignee": "me", "checked": true },
+    { "id": "p5", "item": "Warm Coat", "category": "Clothing", "assignee": "me", "checked": false }
+  ],
+  "sources": [
+    { "title": "SNCF Timetable", "url": "https://www.sncf-connect.com/", "type": "link" },
+    { "title": "Flight Itinerary PDF", "url": "#", "type": "pdf" },
+    { "title": "Hotel Vouchers", "url": "#", "type": "pdf" }
+  ]
+}
