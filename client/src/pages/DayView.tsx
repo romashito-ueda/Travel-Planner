@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { TripData, TripEvent, getStatusColor, getTypeIcon } from "@/lib/types";
+import { TripData, TripEvent, getStatusColor, getTypeIcon, Recommendation } from "@/lib/types";
 import { formatTime, formatDate, formatShortDate, isDateActive, cn } from "@/lib/utils";
-import { Plane, Train, Hotel, MapPin, Circle, Clock, ChevronDown, ChevronUp, AlertTriangle, Calendar } from "lucide-react";
+import { Plane, Train, Hotel, MapPin, Circle, Clock, ChevronDown, ChevronUp, AlertTriangle, Calendar, Sparkles, X, ExternalLink } from "lucide-react";
 import { addDays, parseISO, isSameDay } from "date-fns";
+import { Drawer } from "vaul";
 
 interface DayViewProps {
   data: TripData;
@@ -186,6 +187,78 @@ function EventCard({ event }: { event: TripEvent }) {
               <MapPin className="w-3.5 h-3.5" />
               <span>{event.locationJa || event.location}</span>
             </div>
+
+            {/* Recommendations Button */}
+            {event.recommendations && event.recommendations.length > 0 && (
+              <div className="mt-3">
+                 <Drawer.Root>
+                  <Drawer.Trigger asChild>
+                    <button 
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-full py-2.5 bg-indigo-50 text-indigo-700 text-sm font-bold rounded-lg border border-indigo-100 flex items-center justify-center gap-2 hover:bg-indigo-100 transition-colors shadow-sm"
+                    >
+                      <Sparkles className="w-4 h-4 fill-indigo-200" />
+                      おすすめの場所
+                    </button>
+                  </Drawer.Trigger>
+                  <Drawer.Portal>
+                    <Drawer.Overlay className="fixed inset-0 bg-black/40 z-50" />
+                    <Drawer.Content className="bg-background flex flex-col rounded-t-[20px] h-[85vh] mt-24 fixed bottom-0 left-0 right-0 z-50 focus:outline-none">
+                      <div className="p-4 bg-background rounded-t-[20px] flex-1 overflow-y-auto">
+                        <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-muted mb-6" />
+                        
+                        <div className="max-w-md mx-auto space-y-6 pb-safe">
+                          <header className="text-center space-y-1 mb-8">
+                            <h2 className="text-2xl font-bold text-foreground">おすすめの過ごし方</h2>
+                            <p className="text-muted-foreground text-sm">{event.nameJa || event.title}</p>
+                          </header>
+
+                          <div className="space-y-6">
+                            {event.recommendations.map((rec: Recommendation, i: number) => (
+                              <div key={i} className="bg-card border border-border rounded-xl overflow-hidden shadow-sm">
+                                <div className="aspect-video w-full bg-muted relative">
+                                  <img 
+                                    src={rec.image} 
+                                    alt={rec.title} 
+                                    className="w-full h-full object-cover" 
+                                  />
+                                </div>
+                                <div className="p-5 space-y-3">
+                                  <h3 className="font-bold text-lg">{rec.title}</h3>
+                                  <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {rec.description}
+                                  </p>
+                                  {rec.searchQuery && (
+                                    <a 
+                                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(rec.searchQuery)}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary/10 transition-colors"
+                                    >
+                                      <MapPin className="w-3 h-3" />
+                                      地図で見る
+                                      <ExternalLink className="w-3 h-3 opacity-50" />
+                                    </a>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          <div className="pt-4">
+                            <Drawer.Close asChild>
+                              <button className="w-full py-3 bg-muted text-foreground font-medium rounded-xl hover:bg-muted/80 transition-colors">
+                                閉じる
+                              </button>
+                            </Drawer.Close>
+                          </div>
+                        </div>
+                      </div>
+                    </Drawer.Content>
+                  </Drawer.Portal>
+                </Drawer.Root>
+              </div>
+            )}
           </div>
         </div>
 

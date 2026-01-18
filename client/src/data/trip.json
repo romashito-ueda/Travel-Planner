@@ -27,6 +27,38 @@
       "details": "Seat: TBD"
     },
     {
+      "id": "ft-can",
+      "type": "other",
+      "status": "planned",
+      "title": "Transit Free Time",
+      "nameJa": "自由時間（広州トランジット）",
+      "start": "2026-01-27T15:30:00",
+      "end": "2026-01-28T00:50:00",
+      "location": "Guangzhou Baiyun International Airport",
+      "locationJa": "広州白雲国際空港",
+      "details": "Layover: approx 9 hours. Time to relax or explore the terminal.",
+      "recommendations": [
+        {
+          "title": "プレミアムラウンジ",
+          "description": "長時間の乗り継ぎにはラウンジが最適です。シャワーを浴びて、軽食をとりながらリラックスできます。",
+          "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e0e7ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%234f46e5'%3ELounge Area%3C/text%3E%3C/svg%3E",
+          "searchQuery": "Guangzhou Baiyun Airport Lounge"
+        },
+        {
+          "title": "空港内での飲茶（点心）",
+          "description": "広州といえば食の都。空港内のレストランでも本場の点心を楽しむことができます。",
+          "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23fef3c7'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23d97706'%3EDim Sum Dining%3C/text%3E%3C/svg%3E",
+          "searchQuery": "Guangzhou Airport Restaurants"
+        },
+        {
+          "title": "仮眠室・カプセルホテル",
+          "description": "次のフライトに備えて仮眠を取りたい場合は、ターミナル内の休憩スペースや時間貸しホテルが便利です。",
+          "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f3e8ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%237e22ce'%3ERest Area%3C/text%3E%3C/svg%3E",
+          "searchQuery": "Guangzhou Airport Hourly Hotel"
+        }
+      ]
+    },
+    {
       "id": "f2",
       "type": "flight",
       "status": "confirmed",

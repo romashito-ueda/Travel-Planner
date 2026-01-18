@@ -1,9 +1,17 @@
 import tripData from "@/data/trip.json";
 
 export type TripData = typeof tripData;
+export type Recommendation = {
+  title: string;
+  description: string;
+  image: string; // Data URI or local path
+  searchQuery?: string;
+};
+
 export type TripEvent = TripData["events"][0] & { 
   nameJa?: string; 
   locationJa?: string;
+  recommendations?: Recommendation[];
 };
 export type TripPlace = TripData["places"][0] & {
   nameJa?: string;
