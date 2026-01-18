@@ -172,12 +172,19 @@ function EventCard({ event }: { event: TripEvent }) {
             </div>
             
             <h3 className="font-bold text-foreground text-lg leading-tight mt-1">
-              {event.title}
+              {event.nameJa ? (
+                <>
+                  <span className="block">{event.nameJa}</span>
+                  <span className="block text-xs font-normal text-muted-foreground mt-0.5">{event.title}</span>
+                </>
+              ) : (
+                event.title
+              )}
             </h3>
             
-            <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+            <div className="flex items-center gap-1.5 text-sm text-muted-foreground mt-1">
               <MapPin className="w-3.5 h-3.5" />
-              <span>{event.location}</span>
+              <span>{event.locationJa || event.location}</span>
             </div>
           </div>
         </div>

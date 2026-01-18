@@ -1,9 +1,13 @@
 import tripData from "@/data/trip.json";
 
 export type TripData = typeof tripData;
-export type TripEvent = TripData["events"][0];
-export type TripConstraint = TripData["constraints"][0];
-export type TripPlace = TripData["places"][0];
+export type TripEvent = TripData["events"][0] & { 
+  nameJa?: string; 
+  locationJa?: string;
+};
+export type TripPlace = TripData["places"][0] & {
+  nameJa?: string;
+};
 export type ChecklistItem = TripData["checklist"][0];
 export type SourceItem = TripData["sources"][0];
 

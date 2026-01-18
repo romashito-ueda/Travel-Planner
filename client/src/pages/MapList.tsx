@@ -33,8 +33,13 @@ export default function MapList({ data }: MapListProps) {
               </div>
               <div className="flex-1">
                 <h3 className="font-bold text-foreground group-hover:text-blue-700 transition-colors">
-                  {place.name}
+                  {place.nameJa || place.name}
                 </h3>
+                {place.nameJa && (
+                  <p className="text-xs text-muted-foreground font-medium">
+                    {place.name}
+                  </p>
+                )}
                 <p className="text-sm text-muted-foreground mt-1 leading-snug">
                   {place.address}
                 </p>
