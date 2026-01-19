@@ -127,6 +127,21 @@ function EventCard({ event }: { event: TripEvent }) {
   const Icon = IconMap[getTypeIcon(event.type) as keyof typeof IconMap] || Circle;
   const statusColor = getStatusColor(event.status);
 
+  // Helper to format time range spanning midnight
+  const formatEventTime = (startStr: string, endStr: string) => {
+    const start = parseISO(startStr);
+    const end = parseISO(endStr);
+    const isNextDay = !isSameDay(start, end);
+    
+    return {
+      start: formatTime(startStr),
+      end: formatTime(endStr),
+      isNextDay
+    };
+  };
+
+  const timeDisplay = formatEventTime(event.start, event.end);
+
   return (
     <div className="relative group">
       {/* Timeline Dot */}
@@ -145,10 +160,13 @@ function EventCard({ event }: { event: TripEvent }) {
       >
         <div className="p-4 flex gap-4">
           {/* Time Column */}
-          <div className="flex flex-col items-center min-w-[3rem] pt-1">
-            <span className="text-sm font-bold font-mono text-foreground">{formatTime(event.start)}</span>
+          <div className="flex flex-col items-center min-w-[3.5rem] pt-1">
+            <span className="text-sm font-bold font-mono text-foreground">{timeDisplay.start}</span>
             <span className="h-full w-px bg-border/50 my-1"></span>
-            <span className="text-xs text-muted-foreground font-mono">{formatTime(event.end)}</span>
+            <div className="flex flex-col items-center">
+              {timeDisplay.isNextDay && <span className="text-[9px] leading-tight text-muted-foreground font-medium mb-0.5">翌日</span>}
+              <span className="text-xs text-muted-foreground font-mono">{timeDisplay.end}</span>
+            </div>
           </div>
 
           {/* Content Column */}
@@ -215,37 +233,12 @@ function EventCard({ event }: { event: TripEvent }) {
 
                           <div className="space-y-6">
                             {event.recommendations.map((rec: Recommendation, i: number) => (
-                              <div key={i} className="bg-card border border-border rounded-xl overflow-hidden shadow-sm">
-                                <div className="aspect-video w-full bg-muted relative">
-                                  <img 
-                                    src={rec.image} 
-                                    alt={rec.title} 
-                                    className="w-full h-full object-cover" 
-                                  />
-                                </div>
-                                <div className="p-5 space-y-3">
-                                  <h3 className="font-bold text-lg">{rec.title}</h3>
-                                  <p className="text-sm text-muted-foreground leading-relaxed">
-                                    {rec.description}
-                                  </p>
-                                  {rec.searchQuery && (
-                                    <a 
-                                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(rec.searchQuery)}`}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary/10 transition-colors"
-                                    >
-                                      <MapPin className="w-3 h-3" />
-                                      地図で見る
-                                      <ExternalLink className="w-3 h-3 opacity-50" />
-                                    </a>
-                                  )}
-                                </div>
-                              </div>
+                              <RecommendationCard key={i} rec={rec} />
                             ))}
                           </div>
                           
                           <div className="pt-4">
+// ... (rest of file)
                             <Drawer.Close asChild>
                               <button className="w-full py-3 bg-muted text-foreground font-medium rounded-xl hover:bg-muted/80 transition-colors">
                                 閉じる
