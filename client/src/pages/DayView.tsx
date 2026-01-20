@@ -4,6 +4,7 @@ import { formatTime, formatDate, formatShortDate, isDateActive, cn } from "@/lib
 import { Plane, Train, Hotel, MapPin, Circle, Clock, ChevronDown, ChevronUp, AlertTriangle, Calendar, Sparkles, X, ExternalLink } from "lucide-react";
 import { addDays, parseISO, isSameDay } from "date-fns";
 import { Drawer } from "vaul";
+import { RecommendationCard } from "@/components/RecommendationCard";
 
 interface DayViewProps {
   data: TripData;
