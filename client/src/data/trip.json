@@ -95,6 +95,173 @@
     "details": ""
     },
     {
+      "id": "t-basel-luzern-20260128",
+      "type": "train",
+      "status": "todo",
+      "title": "Basel SBB → Luzern (Unbooked)",
+      "nameJa": "バーゼルSBB駅 → ルツェルン駅（未予約）",
+      "start": "2026-01-28T14:04:00",
+      "end": "2026-01-28T15:05:00",
+      "location": "Basel SBB -> Luzern",
+      "locationJa": "バーゼルSBB駅 → ルツェルン駅",
+      "details": "未予約。カード表示は第一候補（直通・所要最短）を暫定設定。\n第一候補: IR26 2327 / 14:04発（Pl.9）→15:05着（Pl.7）\n注意: 番線（Pl.）は当日変更の可能性があるため、出発直前に駅の電光掲示とアプリで最終確認。",
+      "trainSummary": {
+        "serviceName": "IR26 2327",
+        "platform": "9",
+        "destination": "Locarno"
+      },
+      "trainDetails": {
+        "timetable": {
+          "note": "候補5便（2026-01-28 Basel SBB→Luzern）。番線（Pl.）は当日変更の可能性があるため、出発直前に駅の電光掲示と公式アプリで最終確認。",
+          "rows": [
+            {
+              "optionNo": 1,
+              "depTime": "13:16",
+              "arrTime": "14:30",
+              "duration": "1h14",
+              "transfers": 0,
+              "services": ["IR27"],
+              "legs": [
+                {
+                  "from": "Basel SBB",
+                  "to": "Luzern",
+                  "depTime": "13:16",
+                  "arrTime": "14:30",
+                  "platformDep": "3",
+                  "platformArr": "8",
+                  "service": "IR 27 2473",
+                  "direction": "Luzern"
+                }
+              ]
+            },
+            {
+              "optionNo": 2,
+              "depTime": "13:30",
+              "arrTime": "14:55",
+              "duration": "1h25",
+              "transfers": 1,
+              "services": ["IC61", "RE24"],
+              "legs": [
+                {
+                  "from": "Basel SBB",
+                  "to": "Olten",
+                  "depTime": "13:30",
+                  "arrTime": "13:55",
+                  "platformDep": "8",
+                  "platformArr": "12",
+                  "service": "IC 61 623",
+                  "direction": "Interlaken Ost"
+                },
+                {
+                  "from": "Olten",
+                  "to": "Luzern",
+                  "depTime": "14:06",
+                  "arrTime": "14:55",
+                  "platformDep": "11",
+                  "platformArr": "9",
+                  "service": "RE 24 4725",
+                  "direction": "Luzern"
+                }
+              ]
+            },
+            {
+              "optionNo": 3,
+              "depTime": "13:33",
+              "arrTime": "15:25",
+              "duration": "1h52",
+              "transfers": 1,
+              "services": ["TGV", "IR75"],
+              "legs": [
+                {
+                  "from": "Basel SBB",
+                  "to": "Zürich HB",
+                  "depTime": "13:33",
+                  "arrTime": "14:26",
+                  "platformDep": "11",
+                  "platformArr": "13",
+                  "service": "TGV 9211",
+                  "direction": "Zürich HB"
+                },
+                {
+                  "from": "Zürich HB",
+                  "to": "Luzern",
+                  "depTime": "14:35",
+                  "arrTime": "15:25",
+                  "platformDep": "6",
+                  "platformArr": "7",
+                  "service": "IR 75 2122",
+                  "direction": "Luzern"
+                }
+              ]
+            },
+            {
+              "optionNo": 4,
+              "depTime": "13:58",
+              "arrTime": "15:45",
+              "duration": "1h47",
+              "transfers": 2,
+              "services": ["ICE", "S29", "S1"],
+              "legs": [
+                {
+                  "from": "Basel SBB",
+                  "to": "Olten",
+                  "depTime": "13:58",
+                  "arrTime": "14:25",
+                  "platformDep": "4",
+                  "platformArr": "11",
+                  "service": "ICE 279",
+                  "direction": "Interlaken Ost"
+                },
+                {
+                  "from": "Olten",
+                  "to": "Sursee",
+                  "depTime": "14:36",
+                  "arrTime": "15:08",
+                  "platformDep": "11",
+                  "platformArr": "2AB",
+                  "service": "S 29 8952",
+                  "direction": "Sursee"
+                },
+                {
+                  "from": "Sursee",
+                  "to": "Luzern",
+                  "depTime": "15:18",
+                  "arrTime": "15:45",
+                  "platformDep": "2CD",
+                  "platformArr": "6",
+                  "service": "S 1 21152",
+                  "direction": "Baar"
+                }
+              ]
+            },
+            {
+              "optionNo": 5,
+              "depTime": "14:04",
+              "arrTime": "15:05",
+              "duration": "1h01",
+              "transfers": 0,
+              "services": ["IR26"],
+              "recommended": true,
+              "legs": [
+                {
+                  "from": "Basel SBB",
+                  "to": "Luzern",
+                  "depTime": "14:04",
+                  "arrTime": "15:05",
+                  "platformDep": "9",
+                  "platformArr": "7",
+                  "service": "IR 26 2327",
+                  "direction": "Locarno"
+                }
+              ]
+            }
+          ]
+        },
+        "howToBuy": "SBB Mobile（推奨）\n1) 時刻表で「Basel SBB → Luzern」「2026-01-28」「14:00前後」を検索\n2) 候補便を開き、Buy ticket（購入）を選択\n3) 2等／片道／大人 を選択\n4) 運賃が複数ある場合は、購入前に「変更・払戻可否」「便の縛り（特定便のみか）」を確認\n5) 決済後、チケット（QR）を保存し検札に備える\n\n券売機\n1) 言語を切替 → Tickets\n2) 行先「Luzern」→ 2等／片道／大人\n3) カード決済して発券\n\n窓口（SBB Travel Centre）\n「Basel SBBからLuzernまで、今日の片道」で購入",
+        "howToGet": "Basel SBB 到着後（TER 96219 が 13:08 着）\n1) まず大きい出発案内（Departures）で「Luzern」または「IR26 2327（Direction: Locarno）」を探す\n2) 表示された番線（Pl.）へ移動（第一候補は Pl.9 だが当日変更あり）\n3) 出発の10分前（目安 13:50台）にはホーム到着して待機\n4) もし 14:04 に間に合わない／番線変更が多い場合は、候補2〜4（乗換あり）や次の直通便を選ぶ\n注意: 番線は変更があり得るため、出発直前に案内板とアプリで最終確認"
+      }
+    },
+    {
     "id": "h1",
     "type": "hotel",
     "status": "confirmed",
