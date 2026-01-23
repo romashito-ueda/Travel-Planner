@@ -1,0 +1,65 @@
+{
+  "categories": [
+    { "key": "essentials", "labelJa": "必携（書類・お金・バックアップ）" },
+    { "key": "electronics", "labelJa": "電子機器・通信" },
+    { "key": "winter_clothing", "labelJa": "衣類（冬・防寒）" },
+    { "key": "hygiene_health", "labelJa": "衛生・健康" },
+    { "key": "comfort", "labelJa": "機内・移動の快適グッズ" }
+  ],
+  "items": [
+    { "id": "e1", "text": "パスポート（残存期間チェック）", "category": "essentials", "checked": false },
+    { "id": "e2", "text": "航空券（eチケット：PDF保存＋印刷）", "category": "essentials", "checked": false },
+    { "id": "e3", "text": "鉄道チケット／予約控え（PDF保存＋印刷）", "category": "essentials", "checked": false },
+    { "id": "e4", "text": "ホテル予約控え（PDF保存＋印刷）", "category": "essentials", "checked": false },
+    { "id": "e5", "text": "海外旅行保険の控え（証券番号・連絡先）", "category": "essentials", "checked": false },
+    { "id": "e6", "text": "パスポートのコピー（顔写真ページ）", "category": "essentials", "checked": false },
+    { "id": "e7", "text": "クレジットカード（メイン＋予備）", "category": "essentials", "checked": false },
+    { "id": "e8", "text": "日本円（帰国時の交通費を含む）", "category": "essentials", "checked": false },
+    { "id": "e9", "text": "現地通貨（EUR/CHF：少額）", "category": "essentials", "checked": false },
+    { "id": "e10", "text": "防犯用：セキュリティポーチ／スリ対策（任意）", "category": "essentials", "checked": false },
+
+    { "id": "el1", "text": "スマートフォン", "category": "electronics", "checked": false },
+    { "id": "el2", "text": "モバイルバッテリー（預け入れ不可：機内持ち込み）", "category": "electronics", "checked": false },
+    { "id": "el3", "text": "充電ケーブル（USB-C/Lightning等）", "category": "electronics", "checked": false },
+    { "id": "el4", "text": "AC充電器（複数ポート推奨）", "category": "electronics", "checked": false },
+    { "id": "el5", "text": "電源プラグ変換（EU＋CH対応、またはマルチ）", "category": "electronics", "checked": false },
+    { "id": "el6", "text": "eSIM／SIM／Wi-Fi手段（事前設定・購入）", "category": "electronics", "checked": false },
+    { "id": "el7", "text": "カメラ（必要なら）", "category": "electronics", "checked": false },
+    { "id": "el8", "text": "カメラ充電器・予備バッテリー（寒冷地は消耗注意）", "category": "electronics", "checked": false },
+
+    { "id": "w1", "text": "アウター（ダウン or コート：フード付き推奨）", "category": "winter_clothing", "checked": false },
+    { "id": "w2", "text": "防寒インナー（上下：ヒートテック等）", "category": "winter_clothing", "checked": false },
+    { "id": "w3", "text": "長袖トップス", "category": "winter_clothing", "checked": false },
+    { "id": "w4", "text": "パンツ（動きやすいもの）", "category": "winter_clothing", "checked": false },
+    { "id": "w5", "text": "下着（必要日数分／洗濯前提なら少なめ）", "category": "winter_clothing", "checked": false },
+    { "id": "w6", "text": "靴下（厚め推奨）", "category": "winter_clothing", "checked": false },
+    { "id": "w7", "text": "マフラー／ネックウォーマー", "category": "winter_clothing", "checked": false },
+    { "id": "w8", "text": "手袋（スマホ操作可だと便利）", "category": "winter_clothing", "checked": false },
+    { "id": "w9", "text": "ニット帽（耳まで覆えるもの）", "category": "winter_clothing", "checked": false },
+    { "id": "w10", "text": "靴（滑りにくく、履き慣れたもの）", "category": "winter_clothing", "checked": false },
+    { "id": "w11", "text": "パジャマ（備え付けがない宿に備える）", "category": "winter_clothing", "checked": false },
+    { "id": "w12", "text": "雨雪対策：レインコート／ポンチョ（傘より優先）", "category": "winter_clothing", "checked": false },
+
+    { "id": "h1", "text": "歯磨きセット", "category": "hygiene_health", "checked": false },
+    { "id": "h2", "text": "洗面用具（シャンプー等：必要量）", "category": "hygiene_health", "checked": false },
+    { "id": "h3", "text": "スキンケア（乾燥対策）", "category": "hygiene_health", "checked": false },
+    { "id": "h4", "text": "日焼け止め（冬でも／雪・高地は反射に注意）", "category": "hygiene_health", "checked": false },
+    { "id": "h5", "text": "メガネ／コンタクト＋保存液（必要なら）", "category": "hygiene_health", "checked": false },
+    { "id": "h6", "text": "ティッシュ（ポケット＋ウェット）", "category": "hygiene_health", "checked": false },
+    { "id": "h7", "text": "マスク（乾燥・防寒）", "category": "hygiene_health", "checked": false },
+    { "id": "h8", "text": "常備薬（風邪薬・整腸剤・下痢止め等）", "category": "hygiene_health", "checked": false },
+    { "id": "h9", "text": "使い捨てカイロ（貼るタイプ推奨）", "category": "hygiene_health", "checked": false },
+
+    { "id": "c1", "text": "耳栓／ノイズキャンセリング（騒音対策）", "category": "comfort", "checked": false },
+    { "id": "c2", "text": "アイマスク", "category": "comfort", "checked": false },
+    { "id": "c3", "text": "ネックピロー（空気式など）", "category": "comfort", "checked": false },
+    { "id": "c4", "text": "使い捨てスリッパ", "category": "comfort", "checked": false },
+    { "id": "c5", "text": "着圧ソックス", "category": "comfort", "checked": false },
+    { "id": "c6", "text": "筆記用具（入国書類・メモ）", "category": "comfort", "checked": false },
+    { "id": "c7", "text": "薄手の保湿（機内の乾燥対策：100mL制限に注意）", "category": "comfort", "checked": false },
+
+    { "id": "x1", "text": "ビニール袋（汚れ物・仕分け）", "category": "comfort", "checked": false },
+    { "id": "x2", "text": "エコバッグ（買い物・荷物増加対策）", "category": "comfort", "checked": false },
+    { "id": "x3", "text": "保温ボトル（任意）", "category": "comfort", "checked": false }
+  ]
+}

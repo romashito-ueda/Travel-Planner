@@ -1,6 +1,8 @@
 import tripData from "@/data/trip.json";
+import checkListData from "@/data/checklist.json";
 
 export type TripData = typeof tripData;
+export type CheckList = typeof checkListData;
 
 export type Recommendation = {
   title: string;
@@ -65,7 +67,6 @@ export type TripPlace = TripData["places"][0] & {
   nameJa?: string;
 };
 
-export type ChecklistItem = TripData["checklist"][0];
 export type SourceItem = TripData["sources"][0];
 
 export type EventStatus = "confirmed" | "planned" | "todo";

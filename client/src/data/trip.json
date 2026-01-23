@@ -409,13 +409,6 @@
       "address": "Quai de la Poissonnerie, 68000 Colmar, France"
     }
   ],
-  "checklist": [
-    { "id": "p1", "item": "Passports", "category": "Essentials", "assignee": "me", "checked": true },
-    { "id": "p2", "item": "Train Tickets (Print)", "category": "Essentials", "assignee": "me", "checked": false },
-    { "id": "p3", "item": "Power Adapter (Type C/J)", "category": "Gadgets", "assignee": "partner", "checked": false },
-    { "id": "p4", "item": "Sim Cards / E-Sim", "category": "Essentials", "assignee": "me", "checked": true },
-    { "id": "p5", "item": "Warm Coat", "category": "Clothing", "assignee": "me", "checked": false }
-  ],
   "sources": [
     { "title": "SNCF Timetable", "url": "https://www.sncf-connect.com/", "type": "link" },
     { "title": "Flight Itinerary PDF", "url": "#", "type": "pdf" },
