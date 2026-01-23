@@ -18,6 +18,12 @@ const IconMap = {
   Circle,
 };
 
+const statusJa: Record<string, string> = {
+  confirmed: "確定",
+  planned: "予定",
+  todo: "未予約",
+};
+
 export default function DayView({ data }: DayViewProps) {
   const startDate = parseISO(data.dateRange.start);
   const endDate = parseISO(data.dateRange.end);
@@ -128,6 +134,17 @@ function EventCard({ event }: { event: TripEvent }) {
   const Icon = IconMap[getTypeIcon(event.type) as keyof typeof IconMap] || Circle;
   const statusColor = getStatusColor(event.status);
 
+  const isTrain = event.type === "train";
+
+  const hasTrainDetails =
+    isTrain &&
+    !!event.trainDetails &&
+    (
+      (event.trainDetails.timetable && event.trainDetails.timetable.rows?.length > 0) ||
+      !!event.trainDetails.howToBuy ||
+      !!event.trainDetails.howToGet
+    );
+
   // Helper to format time range spanning midnight
   const formatEventTime = (startStr: string, endStr: string) => {
     const start = parseISO(startStr);
@@ -181,7 +198,7 @@ function EventCard({ event }: { event: TripEvent }) {
                   "text-xs font-medium px-2 py-0.5 rounded-full uppercase tracking-wider",
                   statusColor
                 )}>
-                  {event.status}
+                  {statusJa[event.status] ?? event.status}
                 </span>
               </div>
               {event.details && (
@@ -206,6 +223,163 @@ function EventCard({ event }: { event: TripEvent }) {
               <MapPin className="w-3.5 h-3.5" />
               <span>{event.locationJa || event.location}</span>
             </div>
+
+            {/* Train quick facts (service / platform / destination) */}
+            {isTrain && (event.trainSummary?.serviceName || event.trainSummary?.platform || event.trainSummary?.destination) && (
+              <div className="mt-2 text-sm text-muted-foreground space-y-1">
+                {event.trainSummary?.serviceName && (
+                  <div className="flex items-center gap-2">
+                    <Train className="w-4 h-4" />
+                    <span className="font-mono">{event.trainSummary.serviceName}</span>
+                  </div>
+                )}
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>
+                    番線:{" "}
+                    <span className="font-mono">
+                      {event.trainSummary?.platform ? `Pl.${event.trainSummary.platform}` : "未確定"}
+                    </span>
+                  </span>
+                </div>
+                {event.trainSummary?.destination && (
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>行き先: {event.trainSummary.destination}</span>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Train Details Button (timetable / how-to) */}
+            {hasTrainDetails && (
+              <div className="mt-3">
+                <Drawer.Root>
+                  <Drawer.Trigger asChild>
+                    <button
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-full py-2.5 bg-emerald-50 text-emerald-800 text-sm font-bold rounded-lg border border-emerald-100 flex items-center justify-center gap-2 hover:bg-emerald-100 transition-colors shadow-sm"
+                    >
+                      <Clock className="w-4 h-4" />
+                      時刻表・購入方法（さらに表示）
+                    </button>
+                  </Drawer.Trigger>
+
+                  <Drawer.Portal>
+                    <Drawer.Overlay className="fixed inset-0 bg-black/40 z-50" />
+                    <Drawer.Content className="bg-background flex flex-col rounded-t-[20px] h-[85vh] mt-24 fixed bottom-0 left-0 right-0 z-50 focus:outline-none">
+                      <div className="p-4 bg-background rounded-t-[20px] flex-1 overflow-y-auto">
+                        <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-muted mb-6" />
+
+                        <div className="max-w-md mx-auto space-y-6 pb-safe">
+                          <header className="text-center space-y-1 mb-4">
+                            <h2 className="text-2xl font-bold text-foreground">
+                              {event.nameJa || event.title}
+                            </h2>
+                            <p className="text-muted-foreground text-sm">
+                              {event.locationJa || event.location}
+                            </p>
+                          </header>
+
+                          {/* Timetable note */}
+                          {event.trainDetails?.timetable?.note && (
+                            <div className="text-xs text-muted-foreground whitespace-pre-line border rounded-lg p-3 bg-muted/20">
+                              {event.trainDetails.timetable.note}
+                            </div>
+                          )}
+
+                          {/* Timetable table */}
+                          {event.trainDetails?.timetable?.rows?.length ? (
+                            <div className="space-y-3">
+                              <div className="border rounded-lg overflow-hidden">
+                                <table className="w-full text-sm">
+                                  <thead className="bg-muted/50">
+                                    <tr>
+                                      <th className="text-left p-2">#</th>
+                                      <th className="text-left p-2">出発</th>
+                                      <th className="text-left p-2">到着</th>
+                                      <th className="text-left p-2">所要</th>
+                                      <th className="text-left p-2">乗換</th>
+                                      <th className="text-left p-2">種別</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {event.trainDetails.timetable.rows.map((r) => (
+                                      <tr key={r.optionNo} className="border-t">
+                                        <td className="p-2 font-mono">
+                                          {r.optionNo}{r.recommended ? " ★" : ""}
+                                        </td>
+                                        <td className="p-2 font-mono">{r.depTime}</td>
+                                        <td className="p-2 font-mono">{r.arrTime}</td>
+                                        <td className="p-2 font-mono">{r.duration}</td>
+                                        <td className="p-2 font-mono">{r.transfers}</td>
+                                        <td className="p-2">{r.services.join(" → ")}</td>
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </table>
+                              </div>
+
+                              {/* Row details (legs) */}
+                              <div className="space-y-2">
+                                {event.trainDetails.timetable.rows.map((r) => (
+                                  <details key={`d-${r.optionNo}`} className="border rounded-lg p-3 bg-card">
+                                    <summary className="cursor-pointer font-bold text-sm">
+                                      #{r.optionNo} の詳細（経由・列車番号・番線）
+                                    </summary>
+                                    <div className="mt-2 space-y-2">
+                                      {r.legs?.map((leg, i) => (
+                                        <div key={i} className="text-sm text-foreground/80">
+                                          <div className="font-mono">
+                                            {leg.from} {leg.depTime}{leg.platformDep ? `（Pl.${leg.platformDep}）` : ""}{" → "}
+                                            {leg.to} {leg.arrTime}{leg.platformArr ? `（Pl.${leg.platformArr}）` : ""}
+                                          </div>
+                                          <div className="text-xs text-muted-foreground">
+                                            {leg.service}{leg.direction ? ` / 行き先: ${leg.direction}` : ""}
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </details>
+                                ))}
+                              </div>
+                            </div>
+                          ) : null}
+
+                          {/* How to buy */}
+                          {event.trainDetails?.howToBuy && (
+                            <section className="border rounded-lg p-3 bg-muted/20">
+                              <h3 className="font-bold text-sm mb-2">チケットの買い方</h3>
+                              <p className="text-sm text-foreground/80 whitespace-pre-line">
+                                {event.trainDetails.howToBuy}
+                              </p>
+                            </section>
+                          )}
+
+                          {/* How to get */}
+                          {event.trainDetails?.howToGet && (
+                            <section className="border rounded-lg p-3 bg-muted/20">
+                              <h3 className="font-bold text-sm mb-2">行き方（駅内の動き）</h3>
+                              <p className="text-sm text-foreground/80 whitespace-pre-line">
+                                {event.trainDetails.howToGet}
+                              </p>
+                            </section>
+                          )}
+
+                          <div className="pt-4">
+                            <Drawer.Close asChild>
+                              <button className="w-full py-3 bg-muted text-foreground font-medium rounded-xl hover:bg-muted/80 transition-colors">
+                                閉じる
+                              </button>
+                            </Drawer.Close>
+                          </div>
+                        </div>
+                      </div>
+                    </Drawer.Content>
+                  </Drawer.Portal>
+                </Drawer.Root>
+              </div>
+            )}
 
             {/* Recommendations Button */}
             {event.recommendations && event.recommendations.length > 0 && (
