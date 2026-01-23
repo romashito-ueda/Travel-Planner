@@ -6,7 +6,7 @@ import checklistData from "@/data/checklist.json";
 type CategoryDef = { key: string; labelJa: string };
 type ChecklistItem = { id: string; text: string; category: string; checked: boolean };
 
-const STORAGE_KEY = "trip-checklist-v2";
+const STORAGE_KEY = "trip-checklist-v3";
 
 export default function Checklist() {
   const categories: CategoryDef[] = checklistData.categories;
