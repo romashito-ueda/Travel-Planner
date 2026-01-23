@@ -1,0 +1,11 @@
+{
+  "categories": [
+    { "key": "must", "labelJa": "必須" },
+    { "key": "should", "labelJa": "準必須" }
+  ],
+  "items": [
+    { "id": "p1", "text": "パスポート", "category": "must", "checked": false },
+    { "id": "p2", "text": "クレジットカード", "category": "must", "checked": false },
+    { "id": "p3", "text": "変換プラグ（C）", "category": "should", "checked": false }
+  ]
+}
