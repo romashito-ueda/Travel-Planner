@@ -1,1 +1,149 @@
-{"date":"2026-01-24 08:45:50","recommendations":[{"type":"transit","name":"Guangzhou Metro","description":"A fast and efficient way to travel across Guangzhou.","lines":[{"line":"Line 1","description":"Connects the southwestern and northeastern parts of the city."},{"line":"Line 2","description":"Runs from the north to the south, connecting the city centre to the railway station."}]}]}
+{
+  "slug": "guangzhou-transit",
+  "titleJa": "広州トランジットの過ごし方",
+  "subtitleJa": "9時間レイオーバー：空港内（確実）／空港外（条件付き）",
+  "meta": {
+    "airport": "CAN",
+    "locationJa": "広州白雲国際空港",
+    "timeWindow": {
+      "start": "2026-01-27T15:30:00",
+      "end": "2026-01-28T00:50:00"
+    }
+  },
+  "guardrails": {
+    "headlineJa": "外出は『入国要件・手荷物・戻り時間』がクリアできる場合のみ",
+    "rules": [
+      "中国への入国要件（ビザ/トランジット条件）を満たすことを先に確認する",
+      "受託手荷物が最終目的地までスルーか／一度ピックアップが必要かを航空券と空港案内で確認する",
+      "空港再入場後の保安検査・出国/搭乗手続きに備え、出発の少なくとも2.5〜3時間前には空港に戻る運用を推奨",
+      "外出に不確実性がある場合は『空港内で完結（確実）』を優先する"
+    ],
+    "recommendedReturnTimeToAirport": "2026-01-27T22:00:00"
+  },
+  "sections": [
+    {
+      "key": "inside",
+      "titleJa": "空港内で完結（確実）",
+      "descriptionJa": "“実在と設備が一次情報で確認できるもの”に限定。休息・回復に寄せた構成。",
+      "items": [
+        {
+          "id": "can-inside-aerotel",
+          "title": "Aerotel Guangzhou（トランジットホテル／保安エリア内）",
+          "summary": "T2国際出発・保安エリア内のホテル。24時間営業。短時間休憩の確実解。",
+          "tags": ["仮眠", "シャワー", "確実性高"],
+          "timeBudget": { "minMinutes": 120, "recommendedMinutes": 240 },
+          "howTo": [
+            "（前提）あなたが『出発/乗継で保安エリア側にいる』状態で利用する。オンワード（次便）の搭乗券が必要。",
+            "T2国際出発（Level 3）でパスポートコントロール通過後、右へ。",
+            "出発案内板（Flight Display）付近のエレベーター/エスカレーターでLevel 4へ上がる。",
+            "“Aerotel” 表記に従って受付へ。短時間滞在で回復（シャワー→仮眠→軽食）を優先。"
+          ],
+          "searchQuery": "Aerotel Guangzhou Baiyun Airport Terminal 2 International Departure Level 4"
+        },
+        {
+          "id": "can-inside-transit-lounge",
+          "title": "China Southern Transit Lounge（シャワー＋睡眠エリア）",
+          "summary": "無料利用条件が明記されており、設備（シャワー・睡眠エリア）も一次情報で確認できる。",
+          "tags": ["休憩", "シャワー", "睡眠エリア", "条件あり"],
+          "timeBudget": { "minMinutes": 60, "recommendedMinutes": 120 },
+          "howTo": [
+            "（先に確認）無料利用条件に該当するか確認（例：CZのビジネス/ファースト、乗継時間条件など）。",
+            "場所の目安：空港内の指定エリア（案内に従って“Transit Lounge”へ）。",
+            "混雑時は『Sky Pearl Lounge（条件該当者）』『Aerotel』に切り替える。"
+          ],
+          "facts": {
+            "openingHoursNote": "05:00–24:00（公式記載）",
+            "amenities": ["シャワー", "睡眠エリア", "軽食・飲料", "Wi-Fi"]
+          },
+          "searchQuery": "China Southern Transit Lounge Guangzhou Baiyun 05:00 24:00 shower sleeping area"
+        },
+        {
+          "id": "can-inside-sky-pearl",
+          "title": "Sky Pearl VIP Lounge（条件該当者向け）",
+          "summary": "T2の国内/国際ラウンジ位置と設備（シャワー・睡眠等）が一次情報で確認できる。",
+          "tags": ["ラウンジ", "シャワー", "睡眠エリア", "条件あり"],
+          "timeBudget": { "minMinutes": 60, "recommendedMinutes": 120 },
+          "howTo": [
+            "（先に確認）対象：ファースト/ビジネス、会員ステータス等の利用条件。",
+            "国際：T2の『国際共同検査＋免税店エリア』を抜けた先、4階中2階（mezzanine）に位置する旨の記載あり。",
+            "国内：T2 国内の保安検査後、3階に位置する旨の記載あり。",
+            "現地表示（Sky Pearl / VIP Lounge）に従って入室。"
+          ],
+          "facts": {
+            "internationalLocationNote": "T2 国際：共同検査＋免税店エリア後の4階中2階（公式記載）",
+            "amenities": ["シャワー", "睡眠エリア", "飲食", "荷物預かり（提供の記載あり）"]
+          },
+          "searchQuery": "China Southern Sky Pearl lounge Guangzhou Baiyun Terminal 2 international mezzanine"
+        },
+        {
+          "id": "can-inside-baggage-storage",
+          "title": "手荷物預かり（T2：Cloud Market 南東側は24時間）",
+          "summary": "T2内の手荷物預かり場所・営業時間が一次情報で確認できる。身軽に動きたい時の土台。",
+          "tags": ["荷物", "身軽", "24時間"],
+          "timeBudget": { "minMinutes": 15, "recommendedMinutes": 30 },
+          "howTo": [
+            "T2の手荷物預かりは複数箇所（出発ロビー3階“Cloud Market”の南西/南東、到着ロビー1階東側）。",
+            "24時間営業の記載があるのは『出発ロビー3階 Cloud Market 南東側』。",
+            "現地案内（Baggage Storage）に従い、料金・受取方法を確認して預ける。"
+          ],
+          "facts": {
+            "t2StoragePoints": 3,
+            "openingHoursHighlights": [
+              "出発ロビー3階：Cloud Market 南東側 00:00–24:00（公式記載）",
+              "出発ロビー3階：Cloud Market 南西側 05:30–23:30（公式記載）",
+              "到着ロビー1階東側：05:30–23:30（公式記載）"
+            ]
+          },
+          "searchQuery": "Guangzhou Baiyun Airport Terminal 2 baggage storage Cloud Market southeast 24 hours"
+        }
+      ]
+    },
+    {
+      "key": "outside",
+      "titleJa": "空港外（条件付き）",
+      "descriptionJa": "入国可能・手荷物条件クリア・戻り時間を守れる場合のみ。『近くて読みやすい』行き先に絞る。",
+      "items": [
+        {
+          "id": "can-outside-tianhe-cbd",
+          "title": "天河CBD（Tiyu Xilu／珠江新城）：夕食＋散歩",
+          "summary": "地下鉄で所要が読みやすく、飲食の選択肢が多い。短時間外出の最適解。",
+          "tags": ["移動簡単", "飲食", "夜景", "短時間向き"],
+          "timeBudget": { "minMinutes": 150, "recommendedMinutes": 210 },
+          "plan": {
+            "departAirport": "2026-01-27T16:30:00",
+            "arriveCity": "2026-01-27T17:20:00",
+            "leaveCity": "2026-01-27T20:30:00",
+            "backToAirport": "2026-01-27T21:30:00"
+          },
+          "howTo": [
+            "地下鉄：T2は『Airport North』、T1は『Airport South』から Metro Line 3（北延伸）で『Tiyu Xilu』へ。",
+            "現地での過ごし方は“1エリア集中”（食事→短距離散歩）に寄せ、移動回数を減らす。",
+            "混雑・迷子・再入場のリスクを見込み、遅くとも21:30までに空港へ戻る運用を基本にする。"
+          ],
+          "facts": {
+            "metroT2ToTiyuXilu": { "minutes": 42, "fareCny": 8, "operatingHours": "06:00–23:15" },
+            "metroT1ToTiyuXilu": { "minutes": 40, "fareCny": 8, "operatingHours": "06:02–23:17" },
+            "taxiToDowntown": { "minutes": "40–50", "fareCnyApprox": 110, "hours": "24h" }
+          },
+          "searchQuery": "Zhujiang New Town Guangzhou night walk"
+        },
+        {
+          "id": "can-outside-beijing-road",
+          "title": "北京路歩行街：食べ歩き・街歩き（戻り厳守）",
+          "summary": "“広州らしさ”が出やすいが、移動が増えがち。短時間で回る範囲を決める。",
+          "tags": ["観光密度", "食べ歩き", "混雑注意"],
+          "timeBudget": { "minMinutes": 150, "recommendedMinutes": 210 },
+          "howTo": [
+            "時間が限られるため『歩行街の中心部だけ』など範囲を先に決める。",
+            "戻り時間を優先。21:30までに空港へ戻る運用が難しければ、このプランは見送る。"
+          ],
+          "riskNotes": [
+            "混雑・移動回数増で遅延リスクが上がる",
+            "入国・手荷物条件が曖昧なら不適"
+          ],
+          "searchQuery": "Beijing Road Pedestrian Street Guangzhou food street"
+        }
+      ]
+    }
+  ]
+}
