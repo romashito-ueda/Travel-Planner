@@ -1,7 +1,8 @@
 import { ArrowLeft, Clock, AlertTriangle, Tag } from "lucide-react";
 import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { getRecommendationDoc } from "@/data/recommendations";
+import { getRecommendationDoc } from "@/data/recommendations/index";
+import type { RecommendationItem, RecommendationSection } from "@/data/recommendations/index";
 import { RecommendationCard } from "@/components/RecommendationCard";
 
 export default function RecommendationPage({ slug }: { slug: string }) {
@@ -186,12 +187,20 @@ function RecItem({ item }: { item: any }) {
               <div className="space-y-2">
                 <p className="font-bold">時間配分（例）</p>
                 <div className="grid grid-cols-2 gap-2">
-                  {Object.entries(item.plan).map(([k, v]) => (
-                    <div key={k} className="rounded-md bg-background border p-2">
-                      <p className="text-[11px] font-bold text-muted-foreground">{k}</p>
-                      <p className="font-mono font-bold">{new Date(v).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</p>
-                    </div>
-                  ))}
+                  {Object.entries(item.plan).map(([k, v]) => {
+                    const timeStr = typeof v === "string" ? v : "";
+                    const d = timeStr ? new Date(timeStr) : null;
+                    const valid = d && !Number.isNaN(d.getTime());
+
+                    return (
+                      <div key={k} className="rounded-md bg-background border p-2">
+                        <p className="text-[11px] font-bold text-muted-foreground">{k}</p>
+                        <p className="font-mono font-bold">
+                          {valid ? d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "-"}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
