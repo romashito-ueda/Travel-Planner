@@ -9,6 +9,7 @@ import DayView from "@/pages/DayView";
 import MapList from "@/pages/MapList";
 import Checklist from "@/pages/Checklist";
 import Sources from "@/pages/Sources";
+import RecommendationPage from "@/pages/RecommendationPage"; // 追加
 import tripData from "@/data/trip.json";
 
 function Router() {
@@ -29,6 +30,10 @@ function Router() {
       <Route path="/sources">
         <Sources data={tripData} />
       </Route>
+      <Route path="/recommendations/:slug">
+        {(params) => <RecommendationPage slug={params.slug} />}
+      </Route>
+
       <Route component={NotFound} />
     </Switch>
   );
